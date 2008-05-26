@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="localizedStrings.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/utilities.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/setup.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Text.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/InfoButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/GlassButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="jquery.js" charset="utf-8"></script>
+    <script type="text/javascript" src="jquery.selectboxes.js" charset="utf-8"></script>
+    <script type="text/javascript" src="jquery.color.js" charset="utf-8"></script>
+    <script type="text/javascript" src="main.js" charset="utf-8"></script>
+</head>
+<body onload="load();" apple-part="com.apple.Dashcode.part.StackLayout">
+    <div id="front">
+        <img id="frontImg" src="Images/front.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.frontimage" apple-style="image-theme: 0; image-shape: 3; image-opacity: 1.00; image-top-color: 0.927305996,0.953170061,0.997283876,1; image-bottom-color: 1,1,1,1; image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 1; shadow-offset: -1.00,-6.00; shadow-color: 0,0,0,0.3333;">
+        <div apple-part="com.apple.Dashcode.part.box" id="box"></div>
+        <div class="apple-no-children" id="info" apple-part="com.apple.Dashcode.part.infobutton" apple-default-image-visibility="hidden"></div>
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-text-overflow="ellipsis" id="status"></div>
+        <input type="text" name="im_doing_this" value="Whatcha doing?" class="apple-textfield apple-no-children text" apple-part="com.apple.Dashcode.part.textfield" id="im_doing_this" maxlength="450" onkeydown="imDoingThis(event)">
+        <input type="text" name="im_doing_this" value="What have you done!?" class="apple-textfield apple-no-children text" apple-part="com.apple.Dashcode.part.textfield" id="i_did_this" maxlength="450" onkeydown="iDidThis(event)">
+        <div apple-part="com.apple.Dashcode.part.box" id="box1"></div>
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-text-overflow="ellipsis" id="text1"></div>
+        <div apple-part="com.apple.Dashcode.part.box" id="box2"></div>
+    </div>
+    <div id="back">
+        <img id="backImg" src="Images/back.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.backimage" apple-style=" image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.1500,0.1500,0.1500; image-border-width: 3; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
+        <div id="done" class="apple-no-children" apple-part="com.apple.Dashcode.part.glassbutton" onkeydown="imDoingThis(event)" onkeypress="imDoingThis(event)" onblur="myBlurHandler(event)" onchange="imDoingThis(event)" onfocus="imDoingThis(event)" onkeyup="imDoingThis(event)" onselect="imDoingThis(event)"></div>
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text2" apple-style="part-width-dependent: true;part-height-dependent: true;"></div>
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text5"></div>
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text3"></div>
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text4"></div>
+        <input type="text" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="url">
+        <select apple-part="com.apple.Dashcode.part.backpopupbutton" id="protocol" apple-group="popup">
+            <option class="apple-hidden">http://</option>
+            <option class="apple-hidden">https://</option>
+        </select>
+        <input type="text" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="token" onblur="loadUsers(event)" onkeydown="loadUsers(event)">
+        <select apple-part="com.apple.Dashcode.part.backpopupbutton" id="user_id" apple-group="popup1" disabled="disabled">
+        </select>
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="error"></div>
+    </div>
+</body>
+</html>
