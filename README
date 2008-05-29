@@ -1,2 +1,8 @@
 Dashcode project to post to Backpack's journal and status features.
 
+TODO
+ * make it work in Tiger
+ * better success response
+ * error (or silently fix and succeed?) when wrong protocol (http vs. https) is chosen
+ * display current status and last journal entry on load. Maybe make it more like the web interface. Click once to expose an textfield?
+ 
