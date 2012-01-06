@@ -119,14 +119,14 @@ if (window.widget) {
 
 function imDoingThis(event) {
   if (event.keyCode == 13) {
-    sendToBackpack('PUT', '/users/' + $("#user_id").val() + '/status.xml', "<status><message>" + $("#im_doing_this").val() + "</message></status>");
+    sendToBackpack('PUT', 'users/' + $("#user_id").val() + '/status.xml', "<status><message>" + $("#im_doing_this").val() + "</message></status>");
     $("#im_doing_this").select();
   }
 }
 
 function iDidThis(event) {
   if (event.keyCode == 13) {
-    sendToBackpack('POST', '/users/' + $("#user_id").val() + '/journal_entries.xml', "<journal-entry><body>" + $("#i_did_this").val() + "</body></journal-entry>");
+    sendToBackpack('POST', 'users/' + $("#user_id").val() + '/journal_entries.xml', "<journal-entry><body>" + $("#i_did_this").val() + "</body></journal-entry>");
     $("#i_did_this").select();
   }
 }
